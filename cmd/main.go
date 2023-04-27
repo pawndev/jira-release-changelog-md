@@ -10,6 +10,7 @@ const (
 	JIRA_VERSION_ID = "JIRA_VERSION_ID"
 	JIRA_USERNAME   = "JIRA_USERNAME"
 	JIRA_PASSWORD   = "JIRA_PASSWORD"
+	JIRA_DOMAIN     = "JIRA_DOMAIN"
 )
 
 func main() {
@@ -19,7 +20,7 @@ func main() {
 		Username: os.Getenv(JIRA_USERNAME),
 		Password: os.Getenv(JIRA_PASSWORD),
 	}
-	jiraClient, _ := jira.NewClient(tp.Client(), "https://e-tf1.atlassian.net")
+	jiraClient, _ := jira.NewClient(tp.Client(), os.Getenv(JIRA_DOMAIN))
 	issues, _, err := jiraClient.Issue.Search(fmt.Sprintf("fixVersion=%s", releaseID), nil)
 	if err != nil {
 		panic(err)

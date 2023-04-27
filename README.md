@@ -11,6 +11,7 @@
 After installing the go dependencies :
 
 ```shell
+JIRA_DOMAIN="https://boulou.atlassian.net" \
 JIRA_VERSION_ID=15025 \
 JIRA_USERNAME=jira@email.com \
 JIRA_PASSWORD=<My-jira-key> go run ./cmd/main.go
