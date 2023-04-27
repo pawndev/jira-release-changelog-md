@@ -27,6 +27,6 @@ func main() {
 	}
 
 	for _, issue := range issues {
-		fmt.Printf("- [%s](https://e-tf1.atlassian.net/browse/%s) %s\n", issue.Key, issue.Key, issue.Fields.Summary)
+		fmt.Printf("- [%s](%s/browse/%s) %s\n", issue.Key, JIRA_DOMAIN, issue.Key, issue.Fields.Summary)
 	}
 }
